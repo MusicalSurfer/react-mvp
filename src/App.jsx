@@ -1,33 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import HomePage from './components/HomePage.jsx';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // State
+  const [games, setGames] = useState(null);
+  const [singleGame, setSingleGame] = useState(null);
+  const [user, setUser] = useState(null);
 
+  // Fetch data from psql for list of games and user information
+  useEffect(() => {
+    const getGames = async () => {
+      const res = await fetch('http://localhost:8000/api/games')
+      const dataArray = await res.json();
+      let gamesArray = dataArray.map(game => game);
+      setGames(gamesArray);
+    }
+
+    const getUser = async () => {
+      const res = await fetch(`http://localhost:8000/api/user/1`)
+      const data = await res.json();
+      setUser(data[0]);
+    }
+    getGames();
+    getUser();
+  }, []);
+
+  //Custom Functions
+  const addGames = (game) => {
+    setGames(game);
+  }
+  const changeSingleGame = (game) => {
+    setSingleGame(game);
+  }
+  // Fetch data for single game when clicked
+  const clickGame = async (id) => {
+    const res = await fetch(`http://localhost:8000/api/games/${id}`)
+    const data = await res.json();
+    changeSingleGame(data[0]);
+  }
+  // If user data has been fetched, display homepage. Otherwise display loading.
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {user ? <HomePage games={games} clickGame={clickGame} singleGame={singleGame} changeSingleGame={changeSingleGame} user={user} /> : <h1>Loading...</h1>}
     </>
   )
 }
