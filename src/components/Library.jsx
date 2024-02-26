@@ -1,5 +1,3 @@
-import Games from './Games.jsx';
-
 const Library = ({ clickLibrary, changeIsActive, isActive }) => {
     const handleClick = (e) => {
         clickLibrary();

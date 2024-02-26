@@ -4,7 +4,7 @@ import pkg from 'pg';
 import dotenv from 'dotenv';
 dotenv.config();
 console.log('App is starting');
-let PORT = 8000 || process.env.PORT;
+let PORT = process.env.PORT || 8000;
 const Pool = pkg.Pool;
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,

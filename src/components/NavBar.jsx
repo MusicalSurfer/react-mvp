@@ -20,6 +20,4 @@ const NavBar = ({ clickLibrary, user, clickUser, clickHome }) => {
         </div>
     )
 }
-{/* <Library clickLibrary={clickLibrary} />
-<UserHandle user={user} clickUser={clickUser} /> */}
 export default NavBar;
