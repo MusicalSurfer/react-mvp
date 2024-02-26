@@ -4,9 +4,13 @@ import pkg from 'pg';
 import dotenv from 'dotenv';
 dotenv.config();
 console.log('App is starting');
+let PORT = 8000 || process.env.PORT;
 const Pool = pkg.Pool;
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    }
 })
 pool.connect()
     .then(() => {
@@ -72,6 +76,6 @@ app.use((err, req, res, next) => {
     res.sendStatus(500);
 })
 
-app.listen(8000, () => {
-    console.log('Listening on port ' + 8000);
+app.listen(PORT, () => {
+    console.log('Listening on port ' + PORT);
 })
