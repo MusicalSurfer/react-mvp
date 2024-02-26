@@ -1,3 +1,5 @@
+import SmokeLogoTrans from '../assets/SmokeLogo.png';
+
 const Home = ({ changeIsActive, isActive, clickHome }) => {
     const handleClick = (e) => {
         changeIsActive("1");
@@ -6,7 +8,7 @@ const Home = ({ changeIsActive, isActive, clickHome }) => {
     return (
         <>
             <li className="nav-item">
-                <a href="#" className={`nav-link ${isActive === "1" ? "active" : ""}`} onClick={handleClick}>Home</a>
+                <img id="logo" src={SmokeLogoTrans} alt="Logo" className={`nav-link ${isActive === "1" ? "active" : ""}`} onClick={handleClick} />
             </li>
         </>
     )

@@ -3,7 +3,6 @@ import NavBar from './NavBar.jsx';
 import Games from './Games.jsx';
 import SingleGame from './SingleGame.jsx';
 import Profile from './Profile.jsx';
-
 const HomePage = ({ games, clickGame, singleGame, changeSingleGame, user }) => {
     // State to store what navbar has been clicked.
     const [isLibraryClicked, setIsLibraryClicked] = useState(false);
@@ -33,17 +32,20 @@ const HomePage = ({ games, clickGame, singleGame, changeSingleGame, user }) => {
             return (
                 <>
                     <NavBar clickLibrary={clickLibrary} user={user} clickUser={clickUser} clickHome={clickHome} />
-                    <SingleGame singleGame={singleGame} />
+                    <div className="single-game-master-container">
+                        <div className="game-list">
+                            <Games games={games} clickGame={clickGame} />
+                        </div>
+                        <SingleGame singleGame={singleGame} />
+                    </div>
                 </>
             )
         }
         return (
             <>
                 <NavBar clickLibrary={clickLibrary} user={user} clickUser={clickUser} clickHome={clickHome} />
-                <div className="overflow-auto">
-                    <ul className="list-group">
-                        <Games games={games} clickGame={clickGame} />
-                    </ul>
+                <div className="game-list">
+                    <Games games={games} clickGame={clickGame} />
                 </div>
             </>
         )
@@ -60,7 +62,7 @@ const HomePage = ({ games, clickGame, singleGame, changeSingleGame, user }) => {
         return (
             <>
                 <NavBar clickLibrary={clickLibrary} user={user} clickUser={clickUser} clickHome={clickHome} />
-                <h3 id="welcome-message">Welcome to the Smoke!</h3>
+                <h3 style={{ fontSize: "50px", textAlign: "center" }} id="welcome-message">Welcome to Smoke!</h3>
             </>
         )
     }

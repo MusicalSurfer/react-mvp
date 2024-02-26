@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 import HomePage from './components/HomePage.jsx';
 import './App.css'
 
+//TODO: Add more games into database.
+//TODO: Add pictures for each game.
+
 function App() {
   // State
   const [games, setGames] = useState(null);
