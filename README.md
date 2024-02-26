@@ -18,7 +18,7 @@ You need to have Node.js and npm installed on your machine. If you don't have th
 4. Run `npm build` to build the project.
 5. Run `npm start` to start the server.
 
-## <div <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/render-colored.svg" width="36" height="36" alt="Render" /> Live Demo</div>
+## <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/render-colored.svg" width="36" height="36" alt="Render" /> Live Demo
 
 To see the project deployed and running, visit this URL: TBD.
 
