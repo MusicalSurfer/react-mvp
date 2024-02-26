@@ -18,7 +18,7 @@ You need to have Node.js and npm installed on your machine. If you don't have th
 4. Run `npm build` to build the project.
 5. Run `npm start` to start the server.
 
-## 🌐 Live Demo
+## <a href="https://render.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/render-colored.svg" width="36" height="36" alt="Render" /> Live Demo</a>
 
 To see the project deployed and running, visit this URL: TBD.
 
