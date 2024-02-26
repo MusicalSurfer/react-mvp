@@ -28,7 +28,7 @@ To see the project deployed and running, visit this URL: TBD.
 </p>
 
 ## 🛠️ Framework Details
-* 🌐 [React](https://reactjs.org/) - The web framework used
+* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" />Core language used</a>
 * ⚙️ [Node.js](https://nodejs.org/en/) - JavaScript runtime
 * 🚀 [Express](https://expressjs.com/) - Node.js web application framework
 * 🐘 [PostgreSQL](https://www.postgresql.org/) - Open-Source relational database
