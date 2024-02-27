@@ -4,7 +4,6 @@ import HomePage from './components/HomePage.jsx';
 import './App.css'
 
 //TODO: Add more games into database.
-//TODO: Add pictures for each game.
 
 function App() {
   // State
