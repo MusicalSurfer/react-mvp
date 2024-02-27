@@ -15,14 +15,14 @@ function App() {
   // Fetch data from psql for list of games and user information
   useEffect(() => {
     const getGames = async () => {
-      const res = await fetch('http://localhost:3000/api/games')
+      const res = await fetch('https://react-mvp-gmwr.onrender.com/api/games')
       const dataArray = await res.json();
       let gamesArray = dataArray.map(game => game);
       setGames(gamesArray);
     }
 
     const getUser = async () => {
-      const res = await fetch(`http://localhost:3000/api/user/1`)
+      const res = await fetch(`https://react-mvp-gmwr.onrender.com/api/user/1`)
       const data = await res.json();
       setUser(data[0]);
     }
@@ -39,7 +39,7 @@ function App() {
   }
   // Fetch data for single game when clicked
   const clickGame = async (id) => {
-    const res = await fetch(`http://localhost:3000/api/games/${id}`)
+    const res = await fetch(`https://react-mvp-gmwr.onrender.com/api/games/${id}`)
     const data = await res.json();
     changeSingleGame(data[0]);
   }
