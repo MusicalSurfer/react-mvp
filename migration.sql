@@ -13,5 +13,6 @@ CREATE TABLE game (
     smoke_userID INTEGER REFERENCES smoke_user(id) ON DELETE CASCADE,
     name TEXT,
     genre TEXT,
-    image_url TEXT
+    image_url TEXT,
+    time_played TEXT
 );
