@@ -3,6 +3,7 @@ import NavBar from './NavBar.jsx';
 import Games from './Games.jsx';
 import SingleGame from './SingleGame.jsx';
 import Profile from './Profile.jsx';
+
 const HomePage = ({ games, clickGame, singleGame, changeSingleGame, user }) => {
     // State to store what navbar has been clicked.
     const [isLibraryClicked, setIsLibraryClicked] = useState(false);

@@ -145,4 +145,56 @@
   align-items: center;
 }
 
-.game-card {}
+.profile-container {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(44, 54, 64);
+}
+
+.profile-header {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: row;
+  margin-right: auto;
+}
+
+#profilePicture {
+  padding-top: 20px;
+  width: 160px;
+  height: 220px;
+}
+
+.profile-name {
+  padding-left: 40px;
+  padding-top: 20px;
+  font-size: 35px;
+  color: white;
+}
+
+.profile-level {
+  margin-left: 500px;
+  padding-top: 20px;
+  font-size: 35px;
+  color: white;
+}
+
+.profile-stats {
+  display: flex;
+  flex-direction: row;
+  opacity: .6;
+  width: 98%;
+  padding-left: 20px;
+  margin-top: 20px;
+  font-size: 25px;
+  color: white;
+  background-color: rgb(42, 44, 48);
+}
+
+.recent-activity {
+  margin-left: 10px;
+}
