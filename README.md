@@ -17,6 +17,26 @@ You need to have Node.js and npm installed on your machine. If you don't have th
 3. Run `npm install` to install the dependencies.
 4. Run `npm build` to build the project.
 5. Run `npm start` to start the server.
+   
+### 🔧 API
+
+#### GET
+* /api/game - Get a list of all games
+* /api/user - Get a list of all users
+* /api/games/:gameID - Get one game from gameID
+* /api/user/:userID - Get one user from userID
+  
+#### PATCH
+* /api/games/:gameID - Update a game
+* /api/user/:userID - Update a user
+  
+#### DELETE
+* /api/games/:gameID - Delete a game
+* /api/user/:userID - Delete a user
+  
+#### POST
+* /api/games - Post a new game
+* /api/user - Post a new user
 
 ## <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/render-colored.svg" width="36" height="36" alt="Render" /> Live Demo
 
