@@ -25,11 +25,11 @@ You need to have Node.js and npm installed on your machine. If you don't have th
 * /api/user - Get a list of all users
 * /api/games/:gameID - Get one game from gameID
 * /api/user/:userID - Get one user from userID
-* 
+  
 #### PATCH
 * /api/games/:gameID - Update a game
 * /api/user/:userID - Update a user
-* 
+  
 #### DELETE
 * /api/games/:gameID - Delete a game
 * /api/user/:userID - Delete a user
