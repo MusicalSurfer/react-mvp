@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 console.log('App is starting');
 
+// PG pool creation
 let PORT = process.env.PORT || 8000;
 const Pool = pkg.Pool;
 const pool = new Pool({
@@ -13,6 +14,8 @@ const pool = new Pool({
         rejectUnauthorized: false,
     }
 })
+
+// If database successfully connects, log message, otherwise log error.
 pool.connect()
     .then(() => {
         console.log('Connected to database');
@@ -21,7 +24,8 @@ pool.connect()
         console.error(err);
     })
 
-const app = express();
+const app = express(); // Express app creation
+
 // Middleware
 app.use(
     express.json(),
@@ -202,6 +206,7 @@ app.use((err, req, res, next) => {
     res.sendStatus(500);
 })
 
+// Server listening function
 app.listen(PORT, () => {
     console.log('Listening on port ' + PORT);
 })

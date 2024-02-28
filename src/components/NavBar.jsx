@@ -4,12 +4,16 @@ import UserHandle from './UserHandle.jsx';
 import Home from './Home.jsx';
 
 const NavBar = ({ clickLibrary, user, clickUser, clickHome }) => {
+    // State
     const [isActive, setIsActive] = useState(null);
 
+    // Custom Functions
+    // Function that sends selected item to state.
     const changeIsActive = (id) => {
         setIsActive(id);
     }
 
+    // Render
     return (
         <div className="navBarDiv">
             <ul className="nav justify-content-left">

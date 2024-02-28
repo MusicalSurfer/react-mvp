@@ -3,8 +3,6 @@ import { useEffect } from 'react';
 import HomePage from './components/HomePage.jsx';
 import './App.css'
 
-//TODO: Add more games into database.
-
 function App() {
   // State
   const [games, setGames] = useState(null);
@@ -30,22 +28,21 @@ function App() {
   }, []);
 
   //Custom Functions
-  const addGames = (game) => {
-    setGames(game);
-  }
   const changeSingleGame = (game) => {
     setSingleGame(game);
   }
+
   // Fetch data for single game when clicked
   const clickGame = async (id) => {
     const res = await fetch(`https://react-mvp-gmwr.onrender.com/api/games/${id}`)
     const data = await res.json();
     changeSingleGame(data[0]);
   }
+
   // If user data has been fetched, display homepage. Otherwise display loading.
   return (
     <div className="app">
-      {user ? <HomePage games={games} clickGame={clickGame} singleGame={singleGame} changeSingleGame={changeSingleGame} user={user} /> : <h1>Loading...</h1>}
+      {user ? <HomePage games={games} clickGame={clickGame} singleGame={singleGame} changeSingleGame={changeSingleGame} user={user} /> : <h1 style={{ color: "white" }}>Loading...</h1>}
     </div>
   )
 }

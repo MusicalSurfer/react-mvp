@@ -1,8 +1,10 @@
 const SingleGame = ({ singleGame }) => {
+    // Handler for displaying a install message when install button is clicked.
     const handleClick = (e) => {
         alert("Installing game...");
     }
 
+    // Renders Banner game image with install button, and game info below.
     return (
         <div className="single-game-container">
             <img className="single-game-image" src={singleGame.image_url} alt="Game" />

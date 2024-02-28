@@ -2,6 +2,7 @@ import ProfilePicture from '../assets/5702.jpeg';
 
 const Profile = ({ user }) => {
 
+    // Renders user profile page.
     return (
         <>
             <div className="profile-container">

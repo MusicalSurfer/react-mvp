@@ -13,22 +13,28 @@ const HomePage = ({ games, clickGame, singleGame, changeSingleGame, user }) => {
     // Helper function that changes if library is clicked to true, wipes SingleGame state, and sets isUserClicked to false.
     const clickLibrary = () => {
         setIsLibraryClicked(true);
-        changeSingleGame(null);
+        changeSingleGame(null); // Wipe singleGame state to go back to library
         setIsUserClicked(false);
+        setIsHomeClicked(false);
     }
+
     // Helper function that sets isUserClicked to true and sets isLibraryClicked to false.
     const clickUser = () => {
         setIsUserClicked(true);
         setIsLibraryClicked(false)
+        setIsHomeClicked(false);
     }
+
     // Helper function that sets isHomeClicked to true and sets others to false.
     const clickHome = () => {
         setIsHomeClicked(true);
         setIsLibraryClicked(false)
         setIsUserClicked(false)
     }
+
     // Checks to see what navbar item has been clicked and renders that page.
     if (isLibraryClicked) {
+        // If library is clicked and a game is selected, display single game page otherwise just display library.
         if (singleGame) {
             return (
                 <>
@@ -51,6 +57,7 @@ const HomePage = ({ games, clickGame, singleGame, changeSingleGame, user }) => {
             </>
         )
     }
+    // Displays Profile page
     else if (isUserClicked) {
         return (
             <>
@@ -59,11 +66,12 @@ const HomePage = ({ games, clickGame, singleGame, changeSingleGame, user }) => {
             </>
         )
     }
+    // Display Home page
     else {
         return (
             <>
                 <NavBar clickLibrary={clickLibrary} user={user} clickUser={clickUser} clickHome={clickHome} />
-                <h3 style={{ fontSize: "50px", textAlign: "center" }} id="welcome-message">Welcome to Smoke!</h3>
+                <h3 style={{ fontSize: "3rem", textAlign: "center" }} id="welcome-message">Welcome to Smoke!</h3>
             </>
         )
     }
