@@ -9,6 +9,7 @@ const SingleGame = ({ singleGame }) => {
             <div className="card">
                 <button type="button" className="btn btn-primary" onClick={handleClick}>Install</button>
                 <div className="single-game-details-item">Genre: {singleGame.genre}</div>
+                <div id="timePlayed" className="single-game-details-item">Time Played: {singleGame.time_played}</div>
             </div>
         </div>
     )

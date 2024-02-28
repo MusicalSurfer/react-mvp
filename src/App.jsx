@@ -44,9 +44,9 @@ function App() {
   }
   // If user data has been fetched, display homepage. Otherwise display loading.
   return (
-    <>
+    <div className="app">
       {user ? <HomePage games={games} clickGame={clickGame} singleGame={singleGame} changeSingleGame={changeSingleGame} user={user} /> : <h1>Loading...</h1>}
-    </>
+    </div>
   )
 }
 
